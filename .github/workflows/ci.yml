@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-svg:
+    name: Validate SVG badges
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install xmllint
+        run: sudo apt-get install -y libxml2-utils
+
+      - name: Validate badge SVGs
+        run: |
+          if ls badges/*.svg 2>/dev/null; then
+            for f in badges/*.svg; do
+              xmllint --noout "$f" && echo "OK: $f" || exit 1
+            done
+          else
+            echo "No badges yet — skipping"
+          fi
+
+      - name: Validate theme.xml
+        run: |
+          if [ -f theme.xml ]; then
+            xmllint --noout theme.xml && echo "theme.xml valid"
+          else
+            echo "No theme.xml yet — skipping"
+          fi
