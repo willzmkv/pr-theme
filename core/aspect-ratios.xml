@@ -1,0 +1,36 @@
+<!--
+    Aspect ratio tweaks. The layout uses relative positions, so 16:9 and 16:10 share the base
+    configuration; 4:3 (common on arcade cabinet monitors) gets slightly smaller text so names
+    and metadata still fit the narrower columns.
+-->
+<theme>
+    <aspectRatio name="4:3">
+        <view name="system">
+            <carousel name="systemCarousel">
+                <itemSize>0.3 0.16</itemSize>
+                <maxItemCount>3</maxItemCount>
+                <fontSize>0.03</fontSize>
+            </carousel>
+        </view>
+        <view name="gamelist">
+            <textlist name="gamelistTextlist">
+                <fontSize>0.028</fontSize>
+            </textlist>
+            <image name="prStatusBadge">
+                <maxSize>0.2 0.055</maxSize>
+            </image>
+            <text name="gameTitle">
+                <fontSize>0.03</fontSize>
+            </text>
+            <text name="mdDeveloper, mdPublisher, mdGenre, mdPlayers, gameDescription">
+                <fontSize>0.018</fontSize>
+            </text>
+            <datetime name="mdReleaseDate">
+                <fontSize>0.018</fontSize>
+            </datetime>
+            <text name="labelDeveloper, labelPublisher, labelGenre, labelReleased, labelPlayers, labelRating">
+                <fontSize>0.016</fontSize>
+            </text>
+        </view>
+    </aspectRatio>
+</theme>

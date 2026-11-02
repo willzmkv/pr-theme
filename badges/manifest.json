@@ -1,0 +1,31 @@
+{
+  "theme": "project-r",
+  "version": "0.1.0",
+  "esde": "3.5.0",
+  "mechanism": "image element gameOverridePath (ES-DE THEMES.md, image element)",
+  "overrideDir": "~/ES-DE/pr-badges",
+  "overrideFile": "{overrideDir}/{system}/{stem}.svg",
+  "states": {
+    "NATIVE": {
+      "file": "badges/native.svg",
+      "color": "#4ecdc4"
+    },
+    "EMU": {
+      "file": "badges/emu.svg",
+      "color": "#f5a623"
+    },
+    "BUILDING": {
+      "file": "badges/building.svg",
+      "color": "#4a9eff"
+    },
+    "BUILD ERROR": {
+      "file": "badges/build-error.svg",
+      "color": "#e94560"
+    }
+  },
+  "buildingProgressFile": "badges/building/{progress:03d}.svg",
+  "buildingProgressRange": [
+    0,
+    100
+  ]
+}

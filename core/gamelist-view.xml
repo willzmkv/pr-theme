@@ -1,0 +1,200 @@
+<!-- Gamelist view: text list on the left, info panel with the Project-R status badge on the right. -->
+<theme>
+    <view name="gamelist">
+        <text name="headerSystemName">
+            <pos>0.03 0.045</pos>
+            <origin>0 0.5</origin>
+            <size>0.6 0.05</size>
+            <text>${system.fullName}</text>
+            <fontPath>${prFontBold}</fontPath>
+            <fontSize>0.036</fontSize>
+            <color>${prText}</color>
+            <letterCase>uppercase</letterCase>
+            <zIndex>10</zIndex>
+        </text>
+        <gamelistinfo name="gamelistInfo">
+            <pos>0.97 0.045</pos>
+            <origin>1 0.5</origin>
+            <size>0.35 0.04</size>
+            <fontPath>${prFontRegular}</fontPath>
+            <fontSize>0.024</fontSize>
+            <horizontalAlignment>right</horizontalAlignment>
+            <color>${prTextMuted}</color>
+            <zIndex>10</zIndex>
+        </gamelistinfo>
+
+        <textlist name="gamelistTextlist">
+            <pos>0.03 0.12</pos>
+            <size>0.46 0.77</size>
+            <fontPath>${prFontRegular}</fontPath>
+            <fontSize>0.032</fontSize>
+            <lineSpacing>1.6</lineSpacing>
+            <horizontalMargin>0.012</horizontalMargin>
+            <primaryColor>${prTextBody}</primaryColor>
+            <secondaryColor>${prTextBody}</secondaryColor>
+            <selectedColor>${prText}</selectedColor>
+            <selectedSecondaryColor>${prText}</selectedSecondaryColor>
+            <selectorColor>${prPanelRaised}</selectorColor>
+            <selectorColorEnd>${prPanelRaised}</selectorColorEnd>
+            <zIndex>50</zIndex>
+        </textlist>
+
+        <image name="infoPanel">
+            <pos>0.52 0.12</pos>
+            <size>0.45 0.77</size>
+            <path>./images/white.svg</path>
+            <color>${prPanel}</color>
+            <scaleFactor>0.1</scaleFactor>
+            <zIndex>5</zIndex>
+        </image>
+
+        <!--
+            Project-R status badge (NATIVE / EMU / BUILDING n% / BUILD ERROR).
+            No path on purpose: when pr-meta has not written
+            ${prBadgeDir}/<system>/<stem>.svg for the selected entry, nothing is shown.
+        -->
+        <image name="prStatusBadge">
+            <pos>0.54 0.145</pos>
+            <origin>0 0</origin>
+            <maxSize>0.17 0.06</maxSize>
+            <gameOverridePath>${prBadgeDir}</gameOverridePath>
+            <metadataElement>true</metadataElement>
+            <zIndex>45</zIndex>
+        </image>
+
+        <text name="gameTitle">
+            <pos>0.54 0.235</pos>
+            <origin>0 0</origin>
+            <size>0.41 0.04</size>
+            <metadata>name</metadata>
+            <fontPath>${prFontBold}</fontPath>
+            <fontSize>0.034</fontSize>
+            <color>${prText}</color>
+            <zIndex>40</zIndex>
+        </text>
+
+        <!-- Metadata grid: labels -->
+        <text name="labelDeveloper, labelPublisher, labelGenre, labelReleased, labelPlayers, labelRating">
+            <origin>0 0</origin>
+            <size>0.07 0.018</size>
+            <fontPath>${prFontRegular}</fontPath>
+            <fontSize>0.018</fontSize>
+            <color>${prTextMuted}</color>
+            <metadataElement>true</metadataElement>
+            <zIndex>40</zIndex>
+        </text>
+        <text name="labelDeveloper">
+            <pos>0.54 0.625</pos>
+            <text>DEV</text>
+        </text>
+        <text name="labelPublisher">
+            <pos>0.54 0.66</pos>
+            <text>PUB</text>
+        </text>
+        <text name="labelGenre">
+            <pos>0.54 0.695</pos>
+            <text>GENRE</text>
+        </text>
+        <text name="labelReleased">
+            <pos>0.76 0.625</pos>
+            <text>YEAR</text>
+        </text>
+        <text name="labelPlayers">
+            <pos>0.76 0.66</pos>
+            <text>PLAYERS</text>
+        </text>
+        <text name="labelRating">
+            <pos>0.76 0.695</pos>
+            <text>RATING</text>
+        </text>
+
+        <!-- Metadata grid: values -->
+        <text name="mdDeveloper, mdPublisher, mdGenre, mdPlayers">
+            <origin>0 0</origin>
+            <fontPath>${prFontRegular}</fontPath>
+            <fontSize>0.02</fontSize>
+            <color>${prTextBody}</color>
+            <defaultValue>-</defaultValue>
+            <zIndex>40</zIndex>
+        </text>
+        <text name="mdDeveloper">
+            <pos>0.61 0.624</pos>
+            <size>0.14 0.02</size>
+            <metadata>developer</metadata>
+        </text>
+        <text name="mdPublisher">
+            <pos>0.61 0.659</pos>
+            <size>0.14 0.02</size>
+            <metadata>publisher</metadata>
+        </text>
+        <text name="mdGenre">
+            <pos>0.61 0.694</pos>
+            <size>0.14 0.02</size>
+            <metadata>genre</metadata>
+        </text>
+        <text name="mdPlayers">
+            <pos>0.84 0.659</pos>
+            <size>0.11 0.02</size>
+            <metadata>players</metadata>
+        </text>
+        <datetime name="mdReleaseDate">
+            <pos>0.84 0.624</pos>
+            <origin>0 0</origin>
+            <size>0.11 0.02</size>
+            <metadata>releasedate</metadata>
+            <format>%Y</format>
+            <defaultValue>-</defaultValue>
+            <fontPath>${prFontRegular}</fontPath>
+            <fontSize>0.02</fontSize>
+            <color>${prTextBody}</color>
+            <zIndex>40</zIndex>
+        </datetime>
+        <rating name="mdRating">
+            <pos>0.84 0.695</pos>
+            <origin>0 0</origin>
+            <size>0 0.02</size>
+            <color>${prTextBody}</color>
+            <zIndex>40</zIndex>
+        </rating>
+
+        <text name="gameDescription">
+            <pos>0.54 0.74</pos>
+            <origin>0 0</origin>
+            <size>0.41 0.13</size>
+            <metadata>description</metadata>
+            <container>true</container>
+            <fontPath>${prFontRegular}</fontPath>
+            <fontSize>0.02</fontSize>
+            <lineSpacing>1.4</lineSpacing>
+            <color>${prTextBody}</color>
+            <zIndex>40</zIndex>
+        </text>
+    </view>
+
+    <!-- Game media: scraped video after a short delay, cover art before / without it. -->
+    <variant name="withVideos">
+        <view name="gamelist">
+            <video name="gameMedia">
+                <pos>0.745 0.44</pos>
+                <origin>0.5 0.5</origin>
+                <maxSize>0.41 0.3</maxSize>
+                <imageType>cover, 3dbox, miximage, screenshot, titlescreen</imageType>
+                <delay>1.7</delay>
+                <scrollFadeIn>true</scrollFadeIn>
+                <zIndex>30</zIndex>
+            </video>
+        </view>
+    </variant>
+    <variant name="coversOnly">
+        <view name="gamelist">
+            <image name="gameMedia">
+                <pos>0.745 0.44</pos>
+                <origin>0.5 0.5</origin>
+                <maxSize>0.41 0.3</maxSize>
+                <imageType>cover, 3dbox, miximage, screenshot, titlescreen</imageType>
+                <scrollFadeIn>true</scrollFadeIn>
+                <zIndex>30</zIndex>
+            </image>
+        </view>
+    </variant>
+</theme>

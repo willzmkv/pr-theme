@@ -1,0 +1,78 @@
+<!-- System view: typographic carousel, original wordmarks for the standalone systems, badge legend. -->
+<theme>
+    <view name="system">
+        <text name="prBrand">
+            <pos>0.03 0.045</pos>
+            <origin>0 0.5</origin>
+            <size>0.4 0.05</size>
+            <text>PROJECT-R</text>
+            <fontPath>${prFontBold}</fontPath>
+            <fontSize>0.036</fontSize>
+            <color>${prText}</color>
+            <stationary>always</stationary>
+            <zIndex>10</zIndex>
+        </text>
+
+        <!--
+            Systems with a wordmark in systems/logos/ (ps3, xbox360, ps4, switch, ps5) show it;
+            every other system falls back to its full name rendered in JetBrains Mono, because a
+            missing staticImage set through a variable is skipped silently (THEMES.md, carousel).
+        -->
+        <carousel name="systemCarousel">
+            <type>horizontal</type>
+            <pos>0 0.32</pos>
+            <size>1 0.32</size>
+            <itemSize>0.25 0.18</itemSize>
+            <itemScale>1.2</itemScale>
+            <maxItemCount>3.4</maxItemCount>
+            <staticImage>./../systems/logos/${system.theme}.svg</staticImage>
+            <imageFit>contain</imageFit>
+            <color>00000000</color>
+            <textColor>${prTextBody}</textColor>
+            <textSelectedColor>${prText}</textSelectedColor>
+            <fontPath>${prFontBold}</fontPath>
+            <fontSize>0.035</fontSize>
+            <letterCase>uppercase</letterCase>
+            <lineSpacing>1.2</lineSpacing>
+            <unfocusedItemOpacity>0.35</unfocusedItemOpacity>
+            <zIndex>50</zIndex>
+        </carousel>
+
+        <text name="systemGameCount">
+            <pos>0.5 0.72</pos>
+            <origin>0.5 0.5</origin>
+            <size>0.6 0.04</size>
+            <systemdata>gamecount</systemdata>
+            <fontPath>${prFontRegular}</fontPath>
+            <fontSize>0.028</fontSize>
+            <horizontalAlignment>center</horizontalAlignment>
+            <color>${prTextMuted}</color>
+            <letterCase>uppercase</letterCase>
+            <zIndex>40</zIndex>
+        </text>
+
+        <!-- Badge legend: the same assets pr-meta copies per game. -->
+        <image name="legendNative, legendEmu, legendBuilding, legendBuildError">
+            <origin>1 0.5</origin>
+            <size>0.075 0</size>
+            <stationary>always</stationary>
+            <zIndex>10</zIndex>
+        </image>
+        <image name="legendNative">
+            <pos>0.727 0.045</pos>
+            <path>./../badges/native.svg</path>
+        </image>
+        <image name="legendEmu">
+            <pos>0.808 0.045</pos>
+            <path>./../badges/emu.svg</path>
+        </image>
+        <image name="legendBuilding">
+            <pos>0.889 0.045</pos>
+            <path>./../badges/building.svg</path>
+        </image>
+        <image name="legendBuildError">
+            <pos>0.97 0.045</pos>
+            <path>./../badges/build-error.svg</path>
+        </image>
+    </view>
+</theme>

@@ -1,0 +1,18 @@
+<!-- Theme capabilities for the Project-R ES-DE theme (installed as ~/ES-DE/themes/project-r/) -->
+<themeCapabilities>
+    <themeName>Project-R</themeName>
+
+    <aspectRatio>16:9</aspectRatio>
+    <aspectRatio>16:10</aspectRatio>
+    <aspectRatio>4:3</aspectRatio>
+
+    <variant name="withVideos">
+        <label>Textlist with videos</label>
+        <selectable>true</selectable>
+    </variant>
+
+    <variant name="coversOnly">
+        <label>Textlist with covers</label>
+        <selectable>true</selectable>
+    </variant>
+</themeCapabilities>

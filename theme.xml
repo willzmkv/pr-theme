@@ -1,0 +1,15 @@
+<!--
+    Project-R theme for ES-DE 3.x (tested against the v3.5.0 theme engine tables).
+
+    This root theme.xml is the default for every system that has no <system>/theme.xml of its
+    own (THEMES.md, "Introduction"), so all systems - including the standalone-emulator
+    systems ps3, xbox360, ps4, switch and ps5 - are themed by the same files.
+    Include order matters: later files override earlier ones.
+-->
+<theme>
+    <include>./core/variables.xml</include>
+    <include>./core/common.xml</include>
+    <include>./core/system.xml</include>
+    <include>./core/gamelist-view.xml</include>
+    <include>./core/aspect-ratios.xml</include>
+</theme>

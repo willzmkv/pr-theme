@@ -1,0 +1,35 @@
+<!--
+    Project-R palette and shared settings.
+    Paths below are relative to the core/ directory, so they must only be used
+    from theme files that live in core/ (ES-DE resolves "./" against the file
+    that uses the property, see THEMES.md "Property data types").
+-->
+<theme>
+    <variables>
+        <!-- Surfaces and text (dark, high contrast) -->
+        <prSurface>0D0D1A</prSurface>
+        <prPanel>1A1A2E</prPanel>
+        <prPanelRaised>2A2A47</prPanelRaised>
+        <prBorder>333333</prBorder>
+        <prText>FFFFFF</prText>
+        <prTextBody>C8C8D4</prTextBody>
+        <prTextMuted>888888</prTextMuted>
+
+        <!-- IHC status colours (design spec section 4). Red is reserved for real errors. -->
+        <prNative>4ECDC4</prNative>
+        <prEmu>F5A623</prEmu>
+        <prBuilding>4A9EFF</prBuilding>
+        <prBuildError>E94560</prBuildError>
+
+        <!-- Fonts: JetBrains Mono, SIL OFL 1.1 (core/fonts/OFL.txt) -->
+        <prFontRegular>./fonts/JetBrainsMono-Regular.ttf</prFontRegular>
+        <prFontBold>./fonts/JetBrainsMono-Bold.ttf</prFontBold>
+
+        <!--
+            Per-game status badge directory written by pr-meta.
+            ES-DE looks for {prBadgeDir}/{system name}/{game file stem}.{jpg,png,webp,gif,svg}
+            (image element property gameOverridePath). See README "Badge contract".
+        -->
+        <prBadgeDir>~/ES-DE/pr-badges</prBadgeDir>
+    </variables>
+</theme>

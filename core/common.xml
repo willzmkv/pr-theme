@@ -1,0 +1,52 @@
+<!-- Chrome shared by the system and gamelist views: background, header/footer bars, help prompts. -->
+<theme>
+    <view name="system, gamelist">
+        <image name="prBackground">
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <path>./images/white.svg</path>
+            <color>${prSurface}</color>
+            <scaleFactor>0.1</scaleFactor>
+            <stationary>always</stationary>
+            <zIndex>0</zIndex>
+        </image>
+        <image name="prHeaderBar, prFooterBar">
+            <path>./images/white.svg</path>
+            <color>${prPanel}</color>
+            <scaleFactor>0.1</scaleFactor>
+            <stationary>always</stationary>
+            <zIndex>1</zIndex>
+        </image>
+        <image name="prHeaderBar">
+            <pos>0 0</pos>
+            <size>1 0.09</size>
+        </image>
+        <image name="prFooterBar">
+            <pos>0 0.92</pos>
+            <size>1 0.08</size>
+        </image>
+        <image name="prHeaderRule, prFooterRule">
+            <path>./images/white.svg</path>
+            <color>${prBorder}</color>
+            <stationary>always</stationary>
+            <zIndex>2</zIndex>
+        </image>
+        <image name="prHeaderRule">
+            <pos>0 0.09</pos>
+            <size>1 0.003</size>
+        </image>
+        <image name="prFooterRule">
+            <pos>0 0.917</pos>
+            <size>1 0.003</size>
+        </image>
+
+        <helpsystem name="help">
+            <pos>0.03 0.96</pos>
+            <origin>0 0.5</origin>
+            <textColor>${prTextMuted}</textColor>
+            <iconColor>${prTextMuted}</iconColor>
+            <fontPath>${prFontRegular}</fontPath>
+            <fontSize>0.026</fontSize>
+        </helpsystem>
+    </view>
+</theme>
